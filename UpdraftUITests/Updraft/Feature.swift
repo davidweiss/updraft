@@ -5,6 +5,7 @@
 //  Created by David Weiss on 1/23/18.
 //  Copyright © 2018 David Weiss. All rights reserved.
 //
+//  based on: https://github.com/kylef/Ploughman
 
 import Foundation
 

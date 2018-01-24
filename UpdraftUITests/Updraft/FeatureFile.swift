@@ -5,6 +5,7 @@
 //  Created by David Weiss on 1/23/18.
 //  Copyright © 2018 David Weiss. All rights reserved.
 //
+//  based on: https://github.com/kylef/Ploughman
 
 import Foundation
 
@@ -36,22 +37,25 @@ enum StepError : Error, CustomStringConvertible {
 }
 
 public class FeatureFile {
-    public var path: URL?
-    
-    public init(name: String) {
-        let bundle = Bundle(for: type(of: self))
-        if let url = bundle.resourceURL?.appendingPathComponent("\(name).feature") {
-            path = url
-        }
-    }
-    
-    public typealias Handler = () -> ()
+    var path: URL?
     
     var befores: [Handler] = []
     var afters: [Handler] = []
     var givens: [StepHandler] = []
     var whens: [StepHandler] = []
     var thens: [StepHandler] = []
+    
+    public init(name: String) {
+        let bundle = Bundle(for: type(of: self))
+        if let resourceFilesURL = bundle.resourceURL {
+            let url = resourceFilesURL.appendingPathComponent("\(name)")
+            path = url
+        } else {
+            print("No feature file found in bundle's resource files directory")
+        }
+    }
+    
+    public typealias Handler = () -> ()
     
     public func before(closure: @escaping Handler) {
         befores.append(closure)
@@ -79,10 +83,16 @@ public class FeatureFile {
         thens.append(handler)
     }
     
-    let scenario: [Scenario] = []
-    
-    public func run() throws {
-        
+    public func run() {
+        do {
+            if let featureFileURL = path {
+                try run(paths: [featureFileURL])
+            } else {
+                print("No feature file URL found.")
+            }
+        } catch {
+            print("Failure running feature file.")
+        }
     }
     
     public func run(paths: [URL]) throws {
@@ -122,9 +132,6 @@ public class FeatureFile {
         }
         
         print("\n\(scenarios - failures) scenarios passed, \(failures) scenarios failed.")
-        if failures > 0 {
-            exit(1)
-        }
     }
     
     func run(step: Step, reporter: ScenarioReporter) -> Bool {
@@ -194,23 +201,6 @@ public class FeatureFile {
         throw StepError.NoMatch(step)
     }
 }
-
-
-//public let ploughman: Ploughman = {
-//    return Ploughman()
-//}()
-//
-//public func given(_ expression: String, closure: @escaping StepHandler.Handler) {
-//    ploughman.given(expression, closure: closure)
-//}
-//
-//public func when(_ expression: String, closure: @escaping StepHandler.Handler) {
-//    ploughman.when(expression, closure: closure)
-//}
-//
-//public func then(_ expression: String, closure: @escaping StepHandler.Handler) {
-//    ploughman.then(expression, closure: closure)
-//}
 
 struct ParseError : Error, CustomStringConvertible {
     let description: String
