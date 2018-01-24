@@ -9,28 +9,41 @@
 import XCTest
 
 class UpdraftUITests: XCTestCase {
-        
-    override func setUp() {
-        super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testArrayFeature() {
+        var array: [Int] = []
+        
+        let featureFile = FeatureFile(name: "An array")
+        
+        featureFile.given("^I have an empty array$") { match in
+            array = []
+        }
+        
+        featureFile.given("^I have an array with the numbers (\\d) through (\\d)$") { match in
+            let start = match.groups[1]
+            let end = match.groups[2]
+            
+            array = Array(Int(start)! ..< Int(end)!)
+        }
+        
+        featureFile.when("^I add (\\d) to the array$") { match in
+            let number = Int(match.groups[1])!
+            array.append(number)
+        }
+        
+        featureFile.when("^I filter the array for even numbers$") { match in
+            array = array.filter { $0 % 2 == 0 }
+        }
+        
+        featureFile.then("^I should have (\\d) items? in the array$") { match in
+            let count = Int(match.groups[1])!
+            XCTAssertEqual(array.count, count)
+        }
+        
+        do {
+            try featureFile.run()
+        } catch {
+            XCTFail()
+        }
     }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
 }
