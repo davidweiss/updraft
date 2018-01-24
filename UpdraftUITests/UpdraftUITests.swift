@@ -15,31 +15,31 @@ class UpdraftUITests: XCTestCase {
         
         let featureFile = FeatureFile(name: "An array.feature")
         
-        featureFile.given("^I have an empty array$") { match in
+        featureFile.given("^an empty array$") { match in
             array = []
         }
         
-        featureFile.when("^I add (\\d) to the array$") { match in
-            let number = Int(match.groups[1])!
-            array.append(number)
+        featureFile.when("^the number 1 is added to the array$") { match in
+            array.append(1)
         }
         
-        featureFile.then("^I should have (\\d) items? in the array$") { match in
-            let count = Int(match.groups[1])!
-            XCTAssertEqual(array.count, count)
+        featureFile.then("^the array has (\\d) items$") { match in
+            let itemCount = Int(match.groups[1])!
+            XCTAssertEqual(array.count, itemCount)
         }
         
-        featureFile.given("^I have an array with the numbers (\\d) through (\\d)$") { match in
-            let start = match.groups[1]
-            let end = match.groups[2]
+        featureFile.given("^an array with the numbers (\\d) through (\\d)$") { match in
+            let start = Int(match.groups[1])!
+            let end = Int(match.groups[2])!
             
-            array = Array(Int(start)! ..< Int(end)!)
+            array = Array(start ..< end)
         }
         
-        featureFile.when("^I filter the array for even numbers$") { match in
+        featureFile.when("^the array is filtered for even numbers$") { match in
             array = array.filter { $0 % 2 == 0 }
         }
         
         featureFile.run()
     }
 }
+
