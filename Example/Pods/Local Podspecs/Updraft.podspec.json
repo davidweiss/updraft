@@ -1,0 +1,22 @@
+{
+  "name": "Updraft",
+  "version": "0.1.0",
+  "summary": "A short description of Updraft.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/davidweiss/Updraft",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "davidweiss": "davidweiss@users.noreply.github.com"
+  },
+  "source": {
+    "git": "https://github.com/davidweiss/Updraft.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Updraft/Classes/**/*"
+}

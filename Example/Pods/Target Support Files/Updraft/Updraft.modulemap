@@ -1,0 +1,6 @@
+framework module Updraft {
+  umbrella header "Updraft-umbrella.h"
+
+  export *
+  module * { export * }
+}
