@@ -1,0 +1,4 @@
+os: osx
+osx_image: xcode9.2
+xcode_workspace: Example/Updraft.xcworkspace
+xcode_scheme: Updraft-Example
