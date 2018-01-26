@@ -21,15 +21,15 @@ You can write tests in Gherkin, here's an example `An array.feature` file:
 ```cucumber
 Feature: An array
 
-Scenario: Append to an array
-Given an empty array
-When the number 1 is added to the array
-Then the array has 1 items
+    Scenario: Append to an array
+        Given an empty array
+        When the number 1 is added to the array
+        Then the array has 1 items
 
-Scenario: Filter an array
-Given an array with the numbers 1 through 5
-When the array is filtered for even numbers
-Then the array has 2 items
+    Scenario: Filter an array
+        Given an array with the numbers 1 through 5
+        When the array is filtered for even numbers
+        Then the array has 2 items
 ```
 
 You can then write the implementations of these rules in Swift as a XCTest method :
@@ -38,37 +38,37 @@ You can then write the implementations of these rules in Swift as a XCTest metho
 import XCTest
 
 class UpdraftExampleTests: XCTestCase {
-func testArrayFeature() {
-var array: [Int] = []
+    func testArrayFeature() {
+        var array: [Int] = []
 
-let featureFile = FeatureFile(name: "An array.feature")
+        let featureFile = FeatureFile(name: "An array.feature")
 
-featureFile.given("^an empty array$") { match in
-array = []
-}
+        featureFile.given("^an empty array$") { match in
+            array = []
+        }
 
-featureFile.when("^the number 1 is added to the array$") { match in
-array.append(1)
-}
+        featureFile.when("^the number 1 is added to the array$") { match in
+            array.append(1)
+        }
 
-featureFile.then("^the array has (\\d) items$") { match in
-let itemCount = Int(match.groups[1])!
-XCTAssertEqual(array.count, itemCount)
-}
+        featureFile.then("^the array has (\\d) items$") { match in
+            let itemCount = Int(match.groups[1])!
+            XCTAssertEqual(array.count, itemCount)
+        }
 
-featureFile.given("^an array with the numbers (\\d) through (\\d)$") { match in
-let start = Int(match.groups[1])!
-let end = Int(match.groups[2])!
+        featureFile.given("^an array with the numbers (\\d) through (\\d)$") { match in
+            let start = Int(match.groups[1])!
+            let end = Int(match.groups[2])!
 
-array = Array(start ..< end)
-}
+        array = Array(start ..< end)
+        }
 
-featureFile.when("^the array is filtered for even numbers$") { match in
-array = array.filter { $0 % 2 == 0 }
-}
+        featureFile.when("^the array is filtered for even numbers$") { match in
+            array = array.filter { $0 % 2 == 0 }
+        }
 
-featureFile.run()
-}
+        featureFile.run()
+    }
 }
 ```
 
