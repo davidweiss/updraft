@@ -36,6 +36,11 @@ enum StepError : Error, CustomStringConvertible {
     }
 }
 
+enum FeatureFileError: Error {
+    case noFeatureFileURL
+    case noFeaturesFound
+}
+
 public class FeatureFile {
     var path: URL?
     
@@ -45,13 +50,13 @@ public class FeatureFile {
     var whens: [StepHandler] = []
     var thens: [StepHandler] = []
     
-    public init(name: String) {
-        let bundle = Bundle(for: type(of: self))
+    public init(name: String, testCase: AnyObject) {
+        let bundle = Bundle(for: type(of: testCase))
         if let resourceFilesURL = bundle.resourceURL {
             let url = resourceFilesURL.appendingPathComponent("\(name)")
             path = url
         } else {
-            print("No feature file found in bundle's resource files directory")
+            print("No resource URL found")
         }
     }
     
@@ -83,15 +88,11 @@ public class FeatureFile {
         thens.append(handler)
     }
     
-    public func run() {
-        do {
-            if let featureFileURL = path {
-                try run(paths: [featureFileURL])
-            } else {
-                print("No feature file URL found.")
-            }
-        } catch {
-            print("Failure running feature file.")
+    public func run() throws {
+        if let featureFileURL = path {
+            try run(paths: [featureFileURL])
+        } else {
+            throw FeatureFileError.noFeatureFileURL
         }
     }
     
@@ -99,8 +100,7 @@ public class FeatureFile {
         let features = try Feature.parse(paths: paths)
         
         if features.isEmpty {
-            print("No features found.")
-            exit(1)
+            throw FeatureFileError.noFeaturesFound
         }
         
         try run(features: features)
