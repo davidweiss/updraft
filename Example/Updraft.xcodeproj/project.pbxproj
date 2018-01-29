@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		D4448003BA42802501AB8437 /* Pods_Updraft_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B02E10100BA3BD2F719395 /* Pods_Updraft_Tests.framework */; };
 		DB2DE45505D3210A4C167793 /* Pods_Updraft_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD001D99306C766CAE88E8A8 /* Pods_Updraft_Example.framework */; };
+		FA1B93EA201FD07600DB960C /* XCTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53568A201A3FDD003DFC80 /* XCTestTests.swift */; };
 		FA53568B201A3FDD003DFC80 /* An array.feature in Resources */ = {isa = PBXBuildFile; fileRef = FA535689201A3FDD003DFC80 /* An array.feature */; };
 /* End PBXBuildFile section */
 
@@ -390,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1B93EA201FD07600DB960C /* XCTestTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +573,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Updraft_Example.app/Updraft_Example";
 			};
 			name = Debug;
 		};
@@ -588,6 +591,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Updraft_Example.app/Updraft_Example";
 			};
 			name = Release;
 		};
