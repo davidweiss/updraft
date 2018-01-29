@@ -119,4 +119,4 @@ David Weiss, davidweiss@users.noreply.github.com
 
 ## License
 
-Updraft is available under the MIT license. See the LICENSE file for more info.
+Updraft is available under the Apache License 2.0 license. See the LICENSE file for more info.
