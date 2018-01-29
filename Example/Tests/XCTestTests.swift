@@ -4,10 +4,16 @@ import Updraft
 
 class Tests: XCTestCase {
     
+    func testMissingFeatureFile() {
+        let featureFile = FeatureFile(name: "bogus feature file", testCase: self)
+        
+        XCTAssertThrowsError(try featureFile.run())
+    }
+    
     func testArrayFeature() {
         var array: [Int] = []
         
-        let featureFile = FeatureFile(name: "An array.feature")
+        let featureFile = FeatureFile(name: "An array.feature", testCase: self)
         
         featureFile.given("^an empty array$") { match in
             array = []
@@ -33,7 +39,7 @@ class Tests: XCTestCase {
             array = array.filter { $0 % 2 == 0 }
         }
         
-        featureFile.run()
+        XCTAssertNoThrow(try featureFile.run())
     }
     
 }
