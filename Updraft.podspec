@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/davidweiss'
 
   s.ios.deployment_target = '11.0'
-  s.swift-version = '4.0'
 
   s.source_files = 'Updraft/Classes/**/*'
 end
