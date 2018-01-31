@@ -17,6 +17,7 @@
 		DB2DE45505D3210A4C167793 /* Pods_Updraft_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD001D99306C766CAE88E8A8 /* Pods_Updraft_Example.framework */; };
 		FA1B93EA201FD07600DB960C /* XCTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53568A201A3FDD003DFC80 /* XCTestTests.swift */; };
 		FA53568B201A3FDD003DFC80 /* An array.feature in Resources */ = {isa = PBXBuildFile; fileRef = FA535689201A3FDD003DFC80 /* An array.feature */; };
+		FA82F60C2022446A008F42A3 /* ignoreTags.feature in Resources */ = {isa = PBXBuildFile; fileRef = FA82F60B2022446A008F42A3 /* ignoreTags.feature */; };
 		FAD6BD7120223C2100ECCB6A /* comment.feature in Resources */ = {isa = PBXBuildFile; fileRef = FAD6BD7020223C2100ECCB6A /* comment.feature */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		D3B02E10100BA3BD2F719395 /* Pods_Updraft_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Updraft_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA535689201A3FDD003DFC80 /* An array.feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "An array.feature"; sourceTree = "<group>"; };
 		FA53568A201A3FDD003DFC80 /* XCTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestTests.swift; sourceTree = "<group>"; };
+		FA82F60B2022446A008F42A3 /* ignoreTags.feature */ = {isa = PBXFileReference; lastKnownFileType = text; path = ignoreTags.feature; sourceTree = "<group>"; };
 		FAD6BD7020223C2100ECCB6A /* comment.feature */ = {isa = PBXFileReference; lastKnownFileType = text; path = comment.feature; sourceTree = "<group>"; };
 		FD001D99306C766CAE88E8A8 /* Pods_Updraft_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Updraft_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 			children = (
 				FA535689201A3FDD003DFC80 /* An array.feature */,
 				FAD6BD7020223C2100ECCB6A /* comment.feature */,
+				FA82F60B2022446A008F42A3 /* ignoreTags.feature */,
 				FA53568A201A3FDD003DFC80 /* XCTestTests.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD6BD7120223C2100ECCB6A /* comment.feature in Resources */,
+				FA82F60C2022446A008F42A3 /* ignoreTags.feature in Resources */,
 				FA53568B201A3FDD003DFC80 /* An array.feature in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
