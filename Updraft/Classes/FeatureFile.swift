@@ -232,6 +232,8 @@ enum ParseState {
             self = .then
         } else if value == "and" {
             self = .and
+        } else if value == "but" {
+            self = .and
         } else {
             return nil
         }

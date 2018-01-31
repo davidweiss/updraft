@@ -68,7 +68,8 @@ public struct Feature {
                     
                     state = newState
                 } else {
-                    throw ParseError("Invalid content on line \(line) of \(path)")
+                    // Rather than throw an error if unexpected content is found, ignore it. This will allow for more expressive Gherkin syntax without having to immediately support it.
+                    // throw ParseError("Invalid content on line \(line) of \(path)")
                 }
             }
             

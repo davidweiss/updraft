@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		D4448003BA42802501AB8437 /* Pods_Updraft_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B02E10100BA3BD2F719395 /* Pods_Updraft_Tests.framework */; };
 		DB2DE45505D3210A4C167793 /* Pods_Updraft_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD001D99306C766CAE88E8A8 /* Pods_Updraft_Example.framework */; };
+		FA19E548202255B700727807 /* ViewTermsAndConditionsOfUse.feature in Resources */ = {isa = PBXBuildFile; fileRef = FA19E547202255B700727807 /* ViewTermsAndConditionsOfUse.feature */; };
 		FA1B93EA201FD07600DB960C /* XCTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53568A201A3FDD003DFC80 /* XCTestTests.swift */; };
 		FA53568B201A3FDD003DFC80 /* An array.feature in Resources */ = {isa = PBXBuildFile; fileRef = FA535689201A3FDD003DFC80 /* An array.feature */; };
 		FA82F60C2022446A008F42A3 /* ignoreTags.feature in Resources */ = {isa = PBXBuildFile; fileRef = FA82F60B2022446A008F42A3 /* ignoreTags.feature */; };
@@ -50,6 +51,7 @@
 		A3CC5A60D151B8766DB6C642 /* Pods-Updraft_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Updraft_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Updraft_Tests/Pods-Updraft_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2EAC18A2101D5D894FC30C /* Updraft.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Updraft.podspec; path = ../Updraft.podspec; sourceTree = "<group>"; };
 		D3B02E10100BA3BD2F719395 /* Pods_Updraft_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Updraft_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA19E547202255B700727807 /* ViewTermsAndConditionsOfUse.feature */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewTermsAndConditionsOfUse.feature; sourceTree = "<group>"; };
 		FA535689201A3FDD003DFC80 /* An array.feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "An array.feature"; sourceTree = "<group>"; };
 		FA53568A201A3FDD003DFC80 /* XCTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestTests.swift; sourceTree = "<group>"; };
 		FA82F60B2022446A008F42A3 /* ignoreTags.feature */ = {isa = PBXFileReference; lastKnownFileType = text; path = ignoreTags.feature; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				FA535689201A3FDD003DFC80 /* An array.feature */,
 				FAD6BD7020223C2100ECCB6A /* comment.feature */,
 				FA82F60B2022446A008F42A3 /* ignoreTags.feature */,
+				FA19E547202255B700727807 /* ViewTermsAndConditionsOfUse.feature */,
 				FA53568A201A3FDD003DFC80 /* XCTestTests.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -272,6 +275,7 @@
 			files = (
 				FAD6BD7120223C2100ECCB6A /* comment.feature in Resources */,
 				FA82F60C2022446A008F42A3 /* ignoreTags.feature in Resources */,
+				FA19E548202255B700727807 /* ViewTermsAndConditionsOfUse.feature in Resources */,
 				FA53568B201A3FDD003DFC80 /* An array.feature in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
