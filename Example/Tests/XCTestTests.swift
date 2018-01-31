@@ -10,6 +10,18 @@ class Tests: XCTestCase {
         XCTAssertThrowsError(try featureFile.run())
     }
     
+    func testCommentParsing() {
+        let featureFile = FeatureFile(name: "comment.feature", testCase: self)
+        
+        XCTAssertNoThrow(try featureFile.run())
+    }
+    
+    func testIgnoreTagsParsing() {
+        let featureFile = FeatureFile(name: "ignoreTags.feature", testCase: self)
+        
+        XCTAssertNoThrow(try featureFile.run())
+    }
+    
     func testArrayFeature() {
         var array: [Int] = []
         
