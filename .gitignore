@@ -1,3 +1,8 @@
-## User settings
+# Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)
 xcuserdata/
+
+# OS X temporary files that should never be committed
 .DS_Store
+.Trashes
+*.swp
+
