@@ -86,10 +86,6 @@ pod 'Updraft'
 ```
 and `run pod install`
 
-### Manual Installation
-
-1. Copy the `Updraft` folder to source and include it in your test target
-
 ## Process
 
 1. With everyone on the team, discuss the new feature idea. When you think you've got it mostly understood write it down in Gherkin.
