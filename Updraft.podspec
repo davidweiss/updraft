@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Updraft'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Updraft is a Swift tool for running executable specifications written in a plain language.'
 
   s.description      = <<-DESC
