@@ -76,7 +76,7 @@ public struct Feature {
                 line += 1
                 
                 let contents = content.trimmingCharacters(in: .whitespaces)
-                if contents.isEmpty {
+                if contents.isEmpty || contents.hasPrefix("#") {
                     continue
                 }
                 let tokens = contents.split(":", maxSplits: 1)
