@@ -31,10 +31,14 @@ func echo(_ content: [CustomStringConvertible]) {
 }
 
 class Reporter {
-    func report(_ name: String, closure: (FeatureReporter) -> ()) {
+    func report(_ name: String, closure: (FeatureReporter) throws -> ()) throws {
         let reporter = FeatureReporter(name: name)
         print("-> \(name)")
-        closure(reporter)
+        do {
+            try closure(reporter)
+        } catch {
+            throw error
+        }
     }
 }
 
@@ -45,9 +49,13 @@ class FeatureReporter {
         self.name = name
     }
     
-    func report(_ name: String, closure: (ScenarioReporter) -> ()) {
+    func report(_ name: String, closure: (ScenarioReporter) throws -> ()) throws {
         let reporter = ScenarioReporter(name: name)
-        closure(reporter)
+        do {
+            try closure(reporter)
+        } catch {
+            throw error
+        }
         reporter.print()
     }
 }

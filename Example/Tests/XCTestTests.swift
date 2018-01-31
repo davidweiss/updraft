@@ -28,6 +28,12 @@ class Tests: XCTestCase {
         XCTAssertNoThrow(try featureFile.run())
     }
     
+    func testIncompleteScenarioSteps() {
+        let featureFile = FeatureFile(name: "An array.feature", testCase: self)
+        
+        XCTAssertThrowsError(try featureFile.run())
+    }
+    
     func testArrayFeature() {
         var array: [Int] = []
         

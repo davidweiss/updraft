@@ -39,6 +39,7 @@ enum StepError : Error, CustomStringConvertible {
 enum FeatureFileError: Error {
     case noFeatureFileURL
     case noFeaturesFound
+    case stepFailed
 }
 
 public class FeatureFile {
@@ -111,17 +112,17 @@ public class FeatureFile {
         var failures = 0
         let reporter = Reporter()
         for feature in features {
-            reporter.report(feature.name) { reporter in
+            try reporter.report(feature.name) { reporter in
                 for scenario in feature.scenarios {
                     scenarios += 1
                     
-                    reporter.report(scenario.name) { reporter in
+                    try reporter.report(scenario.name) { reporter in
                         befores.forEach { $0() }
                         
                         for step in scenario.steps {
                             if !run(step: step, reporter: reporter) {
                                 failures += 1
-                                break
+                                throw FeatureFileError.stepFailed
                             }
                         }
                         
