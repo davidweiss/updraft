@@ -1,6 +1,6 @@
 # Updraft
 
-[![CI Status](http://img.shields.io/travis/davidweiss/Updraft.svg?style=flat)](https://travis-ci.org/davidweiss/updraft)
+[![CI Status](https://travis-ci.org/davidweiss/updraft.svg?branch=master)](https://travis-ci.org/davidweiss/updraft)
 [![Version](https://img.shields.io/cocoapods/v/Updraft.svg?style=flat)](http://cocoapods.org/pods/Updraft)
 [![License](https://img.shields.io/cocoapods/l/Updraft.svg?style=flat)](http://cocoapods.org/pods/Updraft)
 [![Platform](https://img.shields.io/cocoapods/p/Updraft.svg?style=flat)](http://cocoapods.org/pods/Updraft)
