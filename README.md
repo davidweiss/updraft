@@ -16,7 +16,7 @@ Updraft is a Swift tool for running executable specifications written in a plain
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-You can write tests in Gherkin, here's an example `An array.feature` file:
+You can write tests in [Gherkin](https://cucumber.io/docs/reference#gherkin), here's an example `An array.feature` file:
 
 ```cucumber
 Feature: An array
@@ -60,7 +60,7 @@ class UpdraftExampleTests: XCTestCase {
             let start = Int(match.groups[1])!
             let end = Int(match.groups[2])!
 
-        array = Array(start ..< end)
+            array = Array(start ..< end)
         }
 
         featureFile.when("^the array is filtered for even numbers$") { match in
@@ -88,7 +88,7 @@ and `run pod install`
 
 ## Process
 
-1. With everyone on the team, discuss the new feature idea. When you think you've got it mostly understood write it down in Gherkin.
+1. With everyone on the team, discuss the new feature idea. When you think you've got it mostly understood write it down in [Gherkin](https://cucumber.io/docs/reference#gherkin).
 2. Add a `<feature name>.feature` file to your test target
 3. Create a new `XCTest` method to test the new feature.
 4. Add `let featureFile = FeatureFile(name: "<feature name>.feature")`
@@ -101,7 +101,7 @@ and `run pod install`
 
 ## Why Updraft?
 
-noun. an upward current or draft of air
+_noun._ an upward current or draft of air
 
 Birds, even swifty ones, if they find an updraft will often circle around as they are lifted up together. This allows them to go higher, further, and faster while expending less effort. Taking the time to define what "done" looks like in a way that can be automated and proven, may seem like you are flying in circles at first, but I believe it will allow you to go higher, further, and faster while expending less effort.
 
