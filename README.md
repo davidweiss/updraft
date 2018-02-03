@@ -2,9 +2,9 @@
 
 [![CI Status](https://travis-ci.org/davidweiss/updraft.svg?branch=master)](https://travis-ci.org/davidweiss/updraft)
 [![Version](https://img.shields.io/cocoapods/v/Updraft.svg?style=flat)](http://cocoapods.org/pods/Updraft)
+[![Language](https://img.shields.io/badge/swift-4-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/cocoapods/p/Updraft.svg?style=flat)](http://cocoapods.org/pods/Updraft)
 [![IDE](https://img.shields.io/badge/Xcode-9-blue.svg)](https://developer.apple.com/xcode/)
-[![Language](https://img.shields.io/badge/swift-4-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/cocoapods/l/Updraft.svg?style=flat)](http://cocoapods.org/pods/Updraft)
 
 Updraft is a Swift tool for running executable specifications written in a plain language. It is a [Swift](https://swift.org) implementation of [Cucumber](https://cucumber.io), using the [Gherkin](https://cucumber.io/docs/reference#gherkin) language.
