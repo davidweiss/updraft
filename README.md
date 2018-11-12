@@ -86,7 +86,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'Updraft'
 ```
-and `run pod install`
+and run `pod install`
 
 ## Process
 
