@@ -38,12 +38,13 @@ You can then write the implementations of these rules in Swift as a XCTest metho
 
 ```swift
 import XCTest
+import Updraft
 
 class UpdraftExampleTests: XCTestCase {
     func testArrayFeature() {
         var array: [Int] = []
 
-        let featureFile = FeatureFile(name: "An array.feature")
+        let featureFile = FeatureFile(name: "An array.feature", testCase: self)
 
         featureFile.given("^an empty array$") { match in
             array = []
@@ -69,7 +70,11 @@ class UpdraftExampleTests: XCTestCase {
             array = array.filter { $0 % 2 == 0 }
         }
 
-        featureFile.run()
+        do {
+            try featureFile.run()
+        } catch {
+            XCTFail("Unexpected error: \(error).")
+        }
     }
 }
 ```
